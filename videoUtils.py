@@ -1,7 +1,9 @@
 import ffmpeg
+import whisper
 import numpy as np
 import os
 from moviepy.editor import VideoFileClip, concatenate_videoclips
+
 
 def detect_silence(input_path, silence_threshold=-35, chunk_duration=0.5):
     """
@@ -48,9 +50,9 @@ def cut_video(input_path, output_path, silence_chunks, min_duration=2.0):
     Sessiz bölgeleri atlayarak videoyu keser.
     """
     video = VideoFileClip(input_path)
+
     segments = []
     last_end = 0
-
     for start, end in silence_chunks:
         if start - last_end > min_duration:
             segments.append(video.subclip(last_end, start))
@@ -101,3 +103,11 @@ def extract_audio(video_path, output_audio_path="temp_audio.wav"):
     except ffmpeg.Error as e:
         print("FFmpeg ses çıkarma hatası:", e)
         return None
+        
+def transcribe_audio(audio_path):
+    """
+    Ses dosyasını transkripte çevirir.
+    """
+    model = whisper.load_model("small")  # whisper'ın küçük modeli hızlı ve yeterli
+    result = model.transcribe(audio_path)
+    return result["text"]
