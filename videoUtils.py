@@ -84,3 +84,20 @@ def burn_in_subtitles(input_video_path, subtitles_path, output_video_path, font_
         print("Altyazılar başarıyla videoya gömüldü!")
     except ffmpeg.Error as e:
         print("FFmpeg altyazı gömme hatası:", e)
+
+def extract_audio(video_path, output_audio_path="temp_audio.wav"):
+    """
+    Videodan sesi çıkarır ve .wav dosyasına kaydeder.
+    """
+    try:
+        (
+            ffmpeg
+            .input(video_path)
+            .output(output_audio_path, acodec='pcm_s16le', ac=1, ar='16000')
+            .overwrite_output()
+            .run()
+        )
+        return output_audio_path
+    except ffmpeg.Error as e:
+        print("FFmpeg ses çıkarma hatası:", e)
+        return None
