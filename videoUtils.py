@@ -62,3 +62,25 @@ def cut_video(input_path, output_path, silence_chunks, min_duration=2.0):
     final = concatenate_videoclips(segments)
     final.write_videofile(output_path, codec="libx264")
 
+def burn_in_subtitles(input_video_path, subtitles_path, output_video_path, font_path="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"):
+    """
+    SRT altyazı dosyasını videoya gömer (stil ile birlikte).
+    """
+    # FFmpeg komutu
+    try:
+        (
+            ffmpeg
+            .input(input_video_path)
+            .output(
+                output_video_path,
+                vf=f"subtitles={subtitles_path}:force_style='FontName=DejaVu Sans,FontSize=24,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=2,Shadow=1'",
+                codec="libx264",
+                crf=23,
+                preset="medium"
+            )
+            .overwrite_output()
+            .run()
+        )
+        print("Altyazılar başarıyla videoya gömüldü!")
+    except ffmpeg.Error as e:
+        print("FFmpeg altyazı gömme hatası:", e)
