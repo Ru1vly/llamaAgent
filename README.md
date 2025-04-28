@@ -44,11 +44,11 @@ python main.py /path/to/your/video.mp4
 ```
 ### 2. Output Files
 After processing, the following files will be saved in the outputs/ folder:
--**edited_video.mp4: The video with silent parts removed.** \n
--**final_output_with_subs.mp4: The final video with subtitles burned in.** \n
--**temp_audio.wav: The audio extracted from the video.** \n
--**subtitles.srt: The subtitle file.** \n
--**caption_and_hashtags.txt: The viral caption and hashtags generated for the video.** \n
++**edited_video.mp4: The video with silent parts removed.** \n
++**final_output_with_subs.mp4: The final video with subtitles burned in.** \n
++**temp_audio.wav: The audio extracted from the video.** \n
++**subtitles.srt: The subtitle file.** \n
++**caption_and_hashtags.txt: The viral caption and hashtags generated for the video.** \n
 
 ## Developer Notes
 -*This project fully automates the video editing and viral content generation process.* \n
