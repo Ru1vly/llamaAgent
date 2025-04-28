@@ -44,19 +44,19 @@ python main.py /path/to/your/video.mp4
 ```
 ### 2. Output Files
 After processing, the following files will be saved in the outputs/ folder:
--**edited_video.mp4: The video with silent parts removed.**
--**final_output_with_subs.mp4: The final video with subtitles burned in.**
--**temp_audio.wav: The audio extracted from the video.**
--**subtitles.srt: The subtitle file.**
--**caption_and_hashtags.txt: The viral caption and hashtags generated for the video.**
+-**edited_video.mp4: The video with silent parts removed.** \n
+-**final_output_with_subs.mp4: The final video with subtitles burned in.** \n
+-**temp_audio.wav: The audio extracted from the video.** \n
+-**subtitles.srt: The subtitle file.** \n
+-**caption_and_hashtags.txt: The viral caption and hashtags generated for the video.** \n
 
 ## Developer Notes
--*This project fully automates the video editing and viral content generation process.*
--*The videos are intended to be formatted for **Instagram Reels***
--*To generate captions and hashtags, you'll need an **OpenAI GPT-3 API key**.*
+-*This project fully automates the video editing and viral content generation process.* \n
+-*The videos are intended to be formatted for **Instagram Reels*** \n
+-*To generate captions and hashtags, you'll need an **OpenAI GPT-3 API key**.* \n
 
 ## License
-> -This project is under the GNU General Public License v3.0
+> This project is under the GNU General Public License v3.0
 
 ## Contributing
 If you'd like to contribute to the project, feel free to open a pull request. Please be clear about what you want to add or change in the project.
