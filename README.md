@@ -1,4 +1,4 @@
-# llamaAgent
+# editorAgent
 
 This project processes and edits videos by adding **subtitles**, cutting out **silent parts**, and generating **viral captions and hashtags**. It leverages the power of **OpenAI GPT-3** to automatically generate viral content for social media platforms like **Instagram Reels**.
 
